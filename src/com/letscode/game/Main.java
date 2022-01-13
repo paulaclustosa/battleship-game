@@ -1,6 +1,6 @@
 package com.letscode.game;
 
-import com.letscode.game.services.Core;
+import com.letscode.game.service.Core;
 
 public class Main {
 

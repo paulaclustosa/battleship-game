@@ -68,7 +68,7 @@ public class Printer {
             ANSI_GREEN + "YOUR SHIPS " + ANSI_RESET +
             "in the board.\n" +
             "\n" +
-            "Remember that your board is like displayed above: ";
+            "Remember that your board is like displayed below:";
 
     private final static String SET_TOTAL_SHIPS_MSG =
             "Please enter the total number of ships: ";

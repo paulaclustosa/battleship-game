@@ -1,4 +1,4 @@
-package com.letscode.game.services;
+package com.letscode.game.service;
 
 import com.letscode.game.entities.player.ComputerPlayer;
 import com.letscode.game.entities.player.HumanPlayer;
@@ -40,11 +40,13 @@ public class Core {
             System.out.println("OPPONENT BOARD:");
             cpu.getBoard().displayBoard(cpu, human);
             hasWinner = Inspector.hasWinner(human, cpu);
+            if (hasWinner) { break; }
 
             cpu.addPlay(human);
             System.out.println("YOUR BOARD:");
             human.getBoard().displayBoard(human, cpu);
             hasWinner = Inspector.hasWinner(cpu, human);
+            if (hasWinner) { break; }
         }
     }
 }

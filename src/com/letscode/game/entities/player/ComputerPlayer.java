@@ -3,7 +3,6 @@ package com.letscode.game.entities.player;
 import com.letscode.game.entities.Ship;
 import com.letscode.game.utils.Inspector;
 import com.letscode.game.utils.Printer;
-import com.letscode.game.utils.Reader;
 
 import java.util.Random;
 
