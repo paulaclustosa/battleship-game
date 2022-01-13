@@ -4,6 +4,7 @@ import com.letscode.game.entities.Ship;
 import com.letscode.game.utils.Inspector;
 import com.letscode.game.utils.Printer;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class ComputerPlayer extends Player {
@@ -41,20 +42,23 @@ public class ComputerPlayer extends Player {
             String randomPosition = playerBoard.getActualRowCoordinates()[randomRowCoordinateIndex] +
                     playerBoard.getActualColumnCoordinates()[randomColumnCoordinateIndex];
 
-            while (plays.contains(randomPosition)) {
-                Printer.printPositionAlreadyChosenMsg();
+            while(!humanPlayer.getBoard().getBoardPositions().contains(randomPosition) ||
+            plays.contains(randomPosition)) {
+                if (!humanPlayer.getBoard().getBoardPositions().contains(randomPosition)) {
+                    Printer.printPositionNotAvailableMsg();
+                } else Printer.printPositionAlreadyChosenMsg();
+
                 randomRowCoordinateIndex = random.nextInt(playerBoard.getActualRowCoordinates().length);
                 randomColumnCoordinateIndex = random.nextInt(playerBoard.getActualColumnCoordinates().length);
-
                 randomPosition = playerBoard.getActualRowCoordinates()[randomRowCoordinateIndex] +
                         playerBoard.getActualColumnCoordinates()[randomColumnCoordinateIndex];
             }
 
             plays.add(randomPosition);
-            checkHumanStrike(randomPosition, humanPlayer);
+            checkComputerStrike(randomPosition, humanPlayer);
     }
 
-    public void checkHumanStrike(String position, HumanPlayer humanPlayer) {
+    public void checkComputerStrike(String position, HumanPlayer humanPlayer) {
         if (Inspector.hasPosition(humanPlayer.getBoard().getShips(), position)) {
             Printer.printCpuHitMsg();
             strikesPositions.add(position);
