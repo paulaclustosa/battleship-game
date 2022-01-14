@@ -44,10 +44,6 @@ public class ComputerPlayer extends Player {
 
             while(!humanPlayer.getBoard().getBoardPositions().contains(randomPosition) ||
             plays.contains(randomPosition)) {
-                if (!humanPlayer.getBoard().getBoardPositions().contains(randomPosition)) {
-                    Printer.printPositionNotAvailableMsg();
-                } else Printer.printPositionAlreadyChosenMsg();
-
                 randomRowCoordinateIndex = random.nextInt(playerBoard.getActualRowCoordinates().length);
                 randomColumnCoordinateIndex = random.nextInt(playerBoard.getActualColumnCoordinates().length);
                 randomPosition = playerBoard.getActualRowCoordinates()[randomRowCoordinateIndex] +
