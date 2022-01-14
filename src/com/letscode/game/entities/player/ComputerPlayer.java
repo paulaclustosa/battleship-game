@@ -19,14 +19,12 @@ public class ComputerPlayer extends Player {
         for (Ship ship : playerBoard.getShips()) {
             int randomRowCoordinateIndex = random.nextInt(playerBoard.getActualRowCoordinates().length);
             int randomColumnCoordinateIndex = random.nextInt(playerBoard.getActualColumnCoordinates().length);
-
             String randomPosition = playerBoard.getActualRowCoordinates()[randomRowCoordinateIndex] +
                     playerBoard.getActualColumnCoordinates()[randomColumnCoordinateIndex];
 
             while(Inspector.hasPosition(playerBoard.getShips(), randomPosition)) {
                 randomRowCoordinateIndex = random.nextInt(playerBoard.getActualRowCoordinates().length);
                 randomColumnCoordinateIndex = random.nextInt(playerBoard.getActualColumnCoordinates().length);
-
                 randomPosition = playerBoard.getActualRowCoordinates()[randomRowCoordinateIndex] +
                         playerBoard.getActualColumnCoordinates()[randomColumnCoordinateIndex];
             }
@@ -38,7 +36,6 @@ public class ComputerPlayer extends Player {
     public void addPlay(HumanPlayer humanPlayer) {
             int randomRowCoordinateIndex = random.nextInt(playerBoard.getActualRowCoordinates().length);
             int randomColumnCoordinateIndex = random.nextInt(playerBoard.getActualColumnCoordinates().length);
-
             String randomPosition = playerBoard.getActualRowCoordinates()[randomRowCoordinateIndex] +
                     playerBoard.getActualColumnCoordinates()[randomColumnCoordinateIndex];
 
